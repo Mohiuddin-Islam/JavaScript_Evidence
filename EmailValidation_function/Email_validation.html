@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email-Validation Form</title>
+</head>
+<body>
+    <!-- <center>
+        <form action="" name="myform">
+            <fieldset style="width: fit-content;">
+            <strong>Email:</strong>
+            <input type="text" name="email" placeholder="Enter Email"><br><br>
+            <strong>Confirm Email:</strong>
+            <input type="text" name="con_email" placeholder="Enter Confirm Email"><br><br>
+            <strong>Password</strong>
+            <input type="password" name="password" placeholder="Enter Password"><br><br>
+            <button onclick="validate()">VALIDATE</button>
+
+        </fieldset>
+        </form>
+    </center>
+
+    <script>
+        function validate(){
+            let email1 = document.myform.email.value;
+            let email2 = document.myform.con_email.value;
+            let pass = document.myform.password.value;
+
+            let pattern = /[A-z0-9]+@[A-z]+\.[a-z]/;
+            let result = email1.search(pattern);
+
+            if(result ==-1){
+                alert("Not Valid");
+            }else if(email1!=email2){
+                alert("Not Matched");
+            }else if(pass.length<7){
+                alert("Not Valid");
+            }else{
+                alert("Valid");
+            }
+        }
+    </script> -->
+
+
+    <center>
+        <form action="" name="myform">
+
+            <h1>User Login Form</h1>
+            <fieldset style="width: fit-content;">
+                <strong>User Name:</strong>
+                <input type="text" name="name" placeholder="Enter User Name"><br><br>
+                <strong>Email:</strong>
+                <input type="text" name="email" placeholder="Enter Email"><br><br>
+                <strong>Confirm Email:</strong>
+                <input type="text" name="con_email" placeholder="Enter Confirm Email"><br><br>
+                <strong>Password:</strong>
+                <input type="password" name="password" placeholder="Enter Password"><br><br>
+                <button onclick="validate()" type="button">Login</button>
+
+            </fieldset>
+        </form>
+        </center>
+
+        <script>
+            function validate(){
+                let name = document.myform.name.value;
+                let email1 = document.myform.email.value;
+                let email2 = document.myform.con_email.value;
+                let password = document.myform.password.value;
+
+
+                let pattern = /[A-z0-9]+@[A-z]+\.[a-z]/;
+                let result = email1.search(pattern);
+
+                if(name==""){
+                    alert("Name must be entered")
+                }else if (password.length<6){
+                    alert("Password must be entered");
+                }else if(email1!=email2){
+                    alert("Not Matched")
+                }else{
+                    alert("Valid");
+                }
+
+            }
+        </script>
+
+</body>
+</html>
