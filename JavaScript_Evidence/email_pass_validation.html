@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Password validation</title>
+</head>
+<body>
+    <h1>Email_Password_validation</h1>
+
+    <form action="" name="myform">
+        <fieldset style="width: fit-content;">
+            <b>Email:</b>
+            <input type="text" name="email" placeholder="Enter Email Address"><br><br>
+            <b>Password:</b>
+            <input type="text" name="password" placeholder="Enter Password"><br><br>
+            <button onclick="myData()" type="button">Submit</button>
+
+        </fieldset>
+    </form>
+
+    <div id="show"></div>
+        <script>
+            class Emailcheck{
+                constructor(email,password){
+                    this.email = email;
+                    this.password = password;
+                }
+
+                validation(){
+                    let pattern = /[A-z0-9]+@[A-z]+\.[a-z]/;
+                    let result = this.email.search(pattern);
+
+                    if(result==-1){
+                        document.getElementById("show").innerHTML = "Email Address is Wrong";
+                    }else if(this.password==""){
+                        document.getElementById("show").innerHTML = "Password must be Filled out";
+                    }else if(this.password.length<6){
+                        document.getElementById("show").innerHTML = "Password must be 6 length";
+                    }else {
+                        document.getElementById("show").innerHTML = "Email Address is Correct";
+                    }
+                }
+            }
+
+            function myData(){
+                let email = document.myform.email.value;
+                let password = document.myform.password.value;
+                let obj = new Emailcheck(email,password);
+                obj.validation();
+            }
+        </script>
+</body>
+</html>

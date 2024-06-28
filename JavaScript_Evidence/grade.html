@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="show"></div>
+    <script>
+        function grade(){
+            let num = prompt("Enter a Marks")
+
+            if(num >= 80){
+                document.getElementById("show").innerHTML = "A+";
+            }else if(num >= 70){
+                document.getElementById("show").innerHTML = "A";
+            }else if(num >= 60){
+                document.getElementById("show").innerHTML = "B";
+            }else{
+                document.getElementById("show").innerHTML = "Fail";
+            }
+        }
+    </script>
+    <button onclick="grade()">Check</button>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <fieldset style="width: fit-content;">
+            <b>Name:</b>
+            <input type="text" name="name" placeholder="Enter Name"><br><br>
+            <b>Contact:</b>
+            <input type="text" name="contact" placeholder="Enter a Contact"><br><br>
+            <b>Remarks:</b>
+            <textarea name="remarks" placeholder="Enter Remarks Here"></textarea><br><br>
+            <b>Sex:</b>
+            Male <input type="radio" name="gender" value="male">
+            Female <input type="radio" name="gender" value="female"><br><br>
+            <b>Course:</b>
+            <input type="checkbox" name="nt" value="NT" class="mj">NT
+            <input type="checkbox" name="iad" value="IAD" class="mj">IAD
+            <input type="checkbox" name="ddd" value="DDD" class="mj">DDD
+            <input type="checkbox" name="esad" value="ESAD" class="mj">ESAD <br><br>
+            <b>Location:</b>
+            <select name="location">
+                <option value="">Choose One</option>
+                <option value="Banani">Banani</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Mirpur">Mirpur</option>
+            </select><br><br>
+            <button onclick="myData()" type="button">Submit</button>
+        </fieldset>
+    </form>
+
+        <script>
+            class Trainee{
+                constructor(name,contact,remarks,sex,course,location){
+                    this.name = name;
+                    this.contact = contact;
+                    this.remarks = remarks;
+                    this.sex = sex;
+                    this.course = course;
+                    this.location = location;
+                }
+
+                validate(){
+                    let output;
+                    output = "<h1>Trainee Information</h1>";
+                    output += "Name: " + this.name + "<br><br>";
+                    output += "Contact: " + this.contact + "<br><br>";
+                    output += "Remarks: " +  this.remarks + "<br><br>";
+                    output += "Sex: " + this.sex + "<br><br>";
+                    output += "Course: " + this.course + "<br><br>";
+                    output += "Location: " + this.location + "<br><br>";
+
+                    let mywindow = window.open("","abc","width=600, height=500");
+                    mywindow.document.write(output);
+                }
+            }
+
+            function myData(){
+                let name = document.myform.name.value;
+                let contact = document.myform.contact.value;
+                let remarks = document.myform.remarks.value;
+                let sex = document.myform.gender.value;
+                let course = document.getElementsByClassName("mj");
+                let cf = "";
+                
+                for(let i = 0; i<course.length; i++){
+                    if(course[i].checked){
+                        cf += course[i].value + ", ";
+                    }
+                }
+                let location = document.myform.location.value;
+
+                let obj = new Trainee(name,contact,remarks,sex,cf,location);
+                obj.validate();
+
+            }
+        </script>
+</body>
+</html>

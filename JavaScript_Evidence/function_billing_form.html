@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Information</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <fieldset style="width: fit-content;">
+            <b>First Name:</b>
+            <input type="text" name="fname" placeholder="Enter First Name"><br><br>
+            <b>Last Name:</b>
+            <input type="text" name="lname" placeholder="Enter Last Name"><br><br>
+            <b>Gender:</b>
+            Male: <input type="radio" name="gender" value="Male">
+            Female: <input type="radio" name="gender" value="Female"><br><br>
+            <b>Language:</b>
+            <input type="checkbox" name="Telugu" value="Telugu" class="lg">Telugu
+            <input type="checkbox" name="English" value="English" class="lg">English
+            <input type="checkbox" name="Hindi" value="Hindi" class="lg">Hindi <br><br>
+            <b>Email:</b>
+            <input type="text" name="email" placeholder="Enter Email Address"><br><br>
+            <b>Address:</b>
+            <textarea name="address" placeholder="Enter Address Here"></textarea><br><br>
+            <b>State:</b>
+            <select name="state">
+                <option value="hidden">Choose State</option>
+                <option value="USA">USA</option>
+                <option value="Uk">UK</option>
+                <option value="Bangladesh">Bangladesh</option>
+            </select><br><br>
+            <b>Zip:</b>
+            <input type="text" name="zip" placeholder="Enter Zip Code"><br><br>
+            <b>Credit Card Type:</b>
+            <select name="card">
+                <option value="">Choose Credit Card</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="VisaCard">VisaCard</option>
+                <option value="DebitCard">DebitCard</option>
+            </select><br><br>
+            <button onclick="validation()" type="button">Submit</button>
+
+        </fieldset>
+    </form>
+
+    <script>
+        function validation(){
+            let name1 = document.myform.fname.value;
+            let name2 = document.myform.lname.value;
+            let gender = document.myform.gender.value;
+            let language = document.getElementsByClassName("lg");
+            let cf = "";
+            
+            for(let i = 0; i<language.length; i++){
+                if(language[i].checked){
+                    cf += language[i].value + ", ";
+                }
+            }
+            let email = document.myform.email.value;
+            let address = document.myform.address.value;
+            let state = document.myform.state.value;
+            let zip = document.myform.zip.value;
+            let card = document.myform.card.value;
+
+            let mywindow = window.open("","abc","width=600,height=600");
+            let output;
+            output = "<h1>Billing Information</h1>";
+            output += "First Name: " + name1 + "<br><br>";
+            output += "Last Name: " + name2 + "<br><br>";
+            output += "Gender: " + gender + "<br><br>";
+            output += "Language: " + cf + "<br><br>";
+            output += "Email: " + email + "<br><br>";
+            output += "Address: " + address + "<br><br>";
+            output += "State: " + state + "<br><br>";
+            output += "Zip: " + zip + "<br><br>";
+            output += "Credit Card Type: " + card + "<br><br>";
+
+            mywindow.document.write(output);
+
+
+        }
+    </script>
+
+</body>
+</html>

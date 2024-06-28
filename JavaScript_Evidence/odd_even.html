@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd_Even</title>
+</head>
+<body>
+    <h1>Odd_Even</h1>
+
+
+    <div id="show"></div>
+    <script>
+        function calculate(){
+            let num = prompt("Enter any number");
+            if(num % 2 == 0){
+                document.getElementById("show").innerHTML = "Odd";
+            }else{
+                document.getElementById("show").innerHTML = "Even";
+            }
+        }
+    </script>
+    <button onclick="calculate()">Check</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+</head>
+<body>
+    <h1>Prime Check</h1>
+
+    <script>
+        function primeCheck(){
+            let num = prompt("Enter any number","");
+            if(num ==1){
+                return num + " Is not a prime Number";
+            }else if(num ==2){
+                return num + " Is a prime Number";
+            }else{
+                for(let i = 2; i<num; i++){
+                    if(num % i ==0){
+                        return num + " Is not a prime Number";
+                    }
+                }
+                return num + " Is a prime Number";
+            }
+        }
+        document.write(primeCheck());
+    </script>
+</body>
+</html>
